@@ -14,6 +14,7 @@ Projeto acadêmico em Python para praticar Programação Orientada a Objetos com
 | `[2]` | Lista os contratos da sessão |
 | `[3]` | Busca uma ordem pelo código |
 | `[4]` | Edita tipo da operação, recompensa e status |
+| `[5]` | Mostra o guia de uso no próprio terminal |
 | `[0]` | Encerra a sessão |
 
 Cada contrato guarda o mercenário responsável, sua especialidade, o tipo de missão, o valor da recompensa e o status.
@@ -39,7 +40,7 @@ Use `[2]` para listar, `[3]` para consultar pelo código ou `[4]` para editar. N
 
 ## 📖 Guia passo a passo
 
-1. **Inicie o programa** com `python main.py`. O menu oferece cadastro, listagem, busca, edição e encerramento.
+1. **Inicie o programa** com `python main.py`. O menu oferece cadastro, listagem, busca, edição, guia de uso e encerramento.
 2. **Cadastre um contrato** escolhendo `[1]`. Informe nome, especialidade, missão e recompensa. O sistema valida os campos e gera o código da ordem.
 3. **Confira os contratos** com `[2]`. A lista mostra os registros criados desde que o programa foi iniciado.
 4. **Consulte uma ordem** com `[3]` e digite o código, por exemplo `OP-001`. A busca aceita letras maiúsculas ou minúsculas.
@@ -54,7 +55,8 @@ Os status disponíveis na edição são:
 | `3` | CONCLUÍDA |
 | `4` | CANCELADA |
 
-6. **Encerre** com `[0]`. Como o projeto usa somente memória, as ordens deixam de existir quando o programa fecha.
+6. **Consulte o guia no programa** com `[5]` para revisar o fluxo, os status disponíveis e as regras de preenchimento.
+7. **Encerre** com `[0]`. Como o projeto usa somente memória, as ordens deixam de existir quando o programa fecha.
 
 ## 🧠 Onde aparece a POO
 

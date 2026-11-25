@@ -110,6 +110,25 @@ def _editar_ordem(central):
     print("Ordem atualizada: {}".format(ordem.resumo()))
 
 
+def _mostrar_guia():
+    print(
+        "\n=== GUIA DE USO ===\n"
+        "1. Cadastre um contrato informando mercenário, especialidade, "
+        "missão e recompensa.\n"
+        "2. Anote o código gerado (por exemplo, OP-001) para localizar "
+        "a ordem depois.\n"
+        "3. Use a opção 2 para listar as ordens desta sessão ou a opção 3 "
+        "para buscar uma pelo código.\n"
+        "4. Use a opção 4 para editar uma ordem. Pressione ENTER nos campos "
+        "que deseja manter.\n"
+        "\nStatus disponíveis: DISPONÍVEL, EM ANDAMENTO, CONCLUÍDA e CANCELADA.\n"
+        "A recompensa deve ser um valor numérico não negativo; vírgula ou "
+        "ponto pode ser usado como separador decimal.\n"
+        "\nOs contratos ficam somente na memória: ao encerrar o programa, "
+        "as ordens desta sessão são apagadas."
+    )
+
+
 def menu_principal():
     central = CentralOperacoes()
     while True:
@@ -119,6 +138,7 @@ def menu_principal():
             "[2] Listar ordens da sessão\n"
             "[3] Buscar ordem por código\n"
             "[4] Editar ordem\n"
+            "[5] Guia de uso\n"
             "[0] Encerrar sessão\n"
         )
         try:
@@ -135,11 +155,13 @@ def menu_principal():
             _buscar_ordem(central)
         elif opcao == "4":
             _editar_ordem(central)
+        elif opcao == "5":
+            _mostrar_guia()
         elif opcao == "0":
             print("Sessão encerrada. Os contratos não são salvos ao fechar o programa.")
             break
         else:
-            print("Opção inválida. Escolha 0, 1, 2, 3 ou 4.")
+            print("Opção inválida. Escolha 0, 1, 2, 3, 4 ou 5.")
 
 
 if __name__ == "__main__":
