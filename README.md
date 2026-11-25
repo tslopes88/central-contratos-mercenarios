@@ -12,6 +12,21 @@ python main.py
 
 O menu permite cadastrar, listar, buscar e editar ordens. Para cadastrar, informe o nome e a especialidade do mercenário, o tipo da missão e o valor da recompensa. Valores podem usar vírgula ou ponto decimal.
 
+## Executar pelo navegador
+
+O programa continua funcionando pelo terminal, mas o terminal pode ser aberto dentro do navegador usando o GitHub Codespaces:
+
+1. Abra o [repositório no GitHub](https://github.com/tslopes88/central-contratos-mercenarios).
+2. Clique em **Code** e abra a aba **Codespaces**.
+3. Escolha **Create codespace on main** e aguarde o ambiente carregar.
+4. No terminal integrado, execute:
+
+```text
+python main.py
+```
+
+Isso não transforma o projeto em uma aplicação web: a interação ainda acontece pelo terminal. O uso do Codespaces depende da disponibilidade e dos limites da conta GitHub.
+
 ## Como o programa está organizado
 
 - `main.py` mostra o menu, lê as respostas e chama as operações.
