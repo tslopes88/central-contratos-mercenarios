@@ -9,7 +9,7 @@ class TestCentralOperacoes(unittest.TestCase):
 
     def criar_ordem(self):
         return self.central.criar_ordem(
-            "Alex Silva", "Reconhecimento", "Escolta de comboio", 2500
+            "Agente Teste", "Reconhecimento", "Escolta de comboio", 2500
         )
 
     def test_cria_ordem_com_codigo_e_guarda_dados_na_sessao(self):
@@ -18,7 +18,7 @@ class TestCentralOperacoes(unittest.TestCase):
         self.assertRegex(ordem.codigo, r"^OP-\d{3,}$")
         self.assertIs(self.central.buscar_ordem(ordem.codigo.lower()), ordem)
         self.assertIn(ordem.resumo(), self.central.listar_ordens())
-        self.assertEqual(ordem.mercenario.nome, "Alex Silva")
+        self.assertEqual(ordem.mercenario.nome, "Agente Teste")
 
     def test_edita_tipo_recompensa_e_status(self):
         ordem = self.criar_ordem()
@@ -35,7 +35,7 @@ class TestCentralOperacoes(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.central.criar_ordem("", "Reconhecimento", "Escolta", 100)
         with self.assertRaises(ValueError):
-            self.central.criar_ordem("Alex", "Reconhecimento", "Escolta", -1)
+            self.central.criar_ordem("Agente Teste", "Reconhecimento", "Escolta", -1)
         with self.assertRaises(ValueError):
             self.central.editar_ordem("OP-999", valor=100)
 

@@ -1,33 +1,36 @@
-# Central de Contratos de Mercenários
+# Central de Operações de Mercenários
 
-Aplicação de terminal em Python para cadastrar e acompanhar contratos de operação atribuídos a mercenários. Cada contrato recebe um código automático e registra o tipo da missão, a recompensa, o agente responsável e o status. Os dados permanecem em memória durante a execução e são descartados quando o programa é encerrado.
+Projeto de terminal em Python para cadastrar contratos de missão. Cada ordem fica ligada a um mercenário, recebe um código automático e guarda o tipo da operação, a recompensa e o status. Os dados ficam na memória durante a execução e são apagados ao fechar o programa.
 
-## Requisitos
+## Executar
 
-- Python 3.8 ou superior
-- Nenhuma biblioteca externa
-
-## Como executar
-
-Abra o terminal nesta pasta e rode:
+É necessário ter Python 3.8 ou superior. Não há dependências externas.
 
 ```text
 python main.py
 ```
 
-Escolha **Cadastrar contrato de operação** e informe o nome do mercenário, sua especialidade, o tipo da missão/contrato e o valor da recompensa. O sistema gera um código como `OP-001`. Enquanto a sessão estiver aberta, é possível listar e buscar ordens, além de editar o tipo, a recompensa e o status. Valores podem ser informados com vírgula ou ponto decimal.
+O menu permite cadastrar, listar, buscar e editar ordens. Para cadastrar, informe o nome e a especialidade do mercenário, o tipo da missão e o valor da recompensa. Valores podem usar vírgula ou ponto decimal.
 
-## Organização e POO
+## Como o programa está organizado
 
-- `models.py`: classes `Mercenario` e `OrdemOperacao`; validam e representam os dados do domínio.
-- `gerenciador.py`: classe `CentralOperacoes`, responsável por criar, buscar, listar e editar ordens em memória.
-- `main.py`: menu e interação com o usuário pelo terminal.
+- `main.py` mostra o menu, lê as respostas e chama as operações.
+- `gerenciador.py` contém `CentralOperacoes`, que mantém as ordens da sessão.
+- `models.py` contém `Mercenario` e `OrdemOperacao`, que representam os dados.
 
-O projeto aplica classes e objetos, encapsulamento por propriedades validadas e composição: cada ordem de operação mantém o mercenário responsável, e a central mantém uma coleção de ordens.
+As propriedades de `Mercenario` e `OrdemOperacao` validam os dados antes de aceitá-los. Uma `OrdemOperacao` está associada a um objeto `Mercenario`; a `CentralOperacoes` mantém a coleção de ordens. Essa separação permite que o menu cuide da entrada e saída, enquanto as classes cuidam dos dados e das regras.
+
+## Roteiro para demonstrar
+
+1. Execute `python main.py` e escolha `[1]`.
+2. Cadastre, por exemplo, `Agente Teste`, `Reconhecimento`, `Escolta de comboio` e `2500`.
+3. Mostre o código gerado, como `OP-001`, e escolha `[2]` para listar as ordens.
+4. Escolha `[4]`, informe o código e altere a recompensa ou o status.
+5. Escolha `[3]` para consultar a ordem atualizada e `[0]` para encerrar.
+
+Ao terminar, explique que os dados são mantidos apenas enquanto o programa está aberto.
 
 ## Testes
-
-Execute os testes automatizados com:
 
 ```text
 python -m unittest discover -s tests -v
