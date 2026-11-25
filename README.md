@@ -109,7 +109,3 @@ Para executar os testes automatizados:
 ```bash
 python -m unittest discover -s tests -v
 ```
-
-## 🎤 Explicação para apresentar
-
-> Este projeto é uma central de operações de mercenários feita em Python e executada pelo terminal. O usuário cadastra um agente, descreve uma missão e define sua recompensa. O programa gera um código para a ordem e permite listar, consultar e editar os contratos durante a sessão. A Programação Orientada a Objetos aparece nas classes `Mercenario`, `OrdemOperacao` e `CentralOperacoes`: cada uma representa uma parte do sistema. As propriedades validam os dados, e cada ordem mantém uma associação com o mercenário responsável. A central guarda as ordens em memória; por isso, elas são apagadas quando o programa é encerrado. Vou demonstrar criando uma ordem, consultando seu código e alterando seu status.
