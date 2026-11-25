@@ -37,6 +37,25 @@ OP-001 | Escolta de comboio | Mercenário: Agente Teste (Reconhecimento) | Recom
 
 Use `[2]` para listar, `[3]` para consultar pelo código ou `[4]` para editar. Na edição, pressione ENTER nos campos que deseja manter.
 
+## 📖 Guia passo a passo
+
+1. **Inicie o programa** com `python main.py`. O menu oferece cadastro, listagem, busca, edição e encerramento.
+2. **Cadastre um contrato** escolhendo `[1]`. Informe nome, especialidade, missão e recompensa. O sistema valida os campos e gera o código da ordem.
+3. **Confira os contratos** com `[2]`. A lista mostra os registros criados desde que o programa foi iniciado.
+4. **Consulte uma ordem** com `[3]` e digite o código, por exemplo `OP-001`. A busca aceita letras maiúsculas ou minúsculas.
+5. **Edite uma ordem** com `[4]`. Digite o código e informe o novo tipo de missão, recompensa e status. Pressione ENTER para manter qualquer campo sem alteração.
+
+Os status disponíveis na edição são:
+
+| Número | Status |
+| --- | --- |
+| `1` | DISPONÍVEL |
+| `2` | EM ANDAMENTO |
+| `3` | CONCLUÍDA |
+| `4` | CANCELADA |
+
+6. **Encerre** com `[0]`. Como o projeto usa somente memória, as ordens deixam de existir quando o programa fecha.
+
 ## 🧠 Onde aparece a POO
 
 | Classe | Responsabilidade |
@@ -91,10 +110,6 @@ Para executar os testes automatizados:
 python -m unittest discover -s tests -v
 ```
 
-## 🎤 Roteiro curto para apresentar
+## 🎤 Explicação para apresentar
 
-1. Explique que o sistema organiza contratos de missão para mercenários.
-2. Cadastre uma ordem e mostre o código gerado.
-3. Liste e consulte a ordem pelo código.
-4. Edite a recompensa ou o status.
-5. Aponte as classes `Mercenario`, `OrdemOperacao` e `CentralOperacoes` e explique que os dados desaparecem ao encerrar o programa.
+> Este projeto é uma central de operações de mercenários feita em Python e executada pelo terminal. O usuário cadastra um agente, descreve uma missão e define sua recompensa. O programa gera um código para a ordem e permite listar, consultar e editar os contratos durante a sessão. A Programação Orientada a Objetos aparece nas classes `Mercenario`, `OrdemOperacao` e `CentralOperacoes`: cada uma representa uma parte do sistema. As propriedades validam os dados, e cada ordem mantém uma associação com o mercenário responsável. A central guarda as ordens em memória; por isso, elas são apagadas quando o programa é encerrado. Vou demonstrar criando uma ordem, consultando seu código e alterando seu status.
