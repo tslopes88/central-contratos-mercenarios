@@ -14,7 +14,7 @@ Projeto acadêmico em Python para praticar Programação Orientada a Objetos com
 | `[2]` | Lista os contratos da sessão |
 | `[3]` | Busca uma ordem pelo código |
 | `[4]` | Edita tipo da operação, recompensa e status |
-| `[5]` | Mostra o guia de uso no próprio terminal |
+| `[5]` | Exibe o guia de uso no terminal |
 | `[0]` | Encerra a sessão |
 
 Cada contrato guarda o mercenário responsável, sua especialidade, o tipo de missão, o valor da recompensa e o status.
